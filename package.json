@@ -1,0 +1,14 @@
+{
+	"name": "catpow-gas",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"init": "git config core.hooksPath githooks && node scripts/init-clasp.js"
+	},
+	"author": "",
+	"license": "MIT",
+	"description": "",
+	"devDependencies": {
+		"@google/clasp": "^2.4.2"
+	}
+}
