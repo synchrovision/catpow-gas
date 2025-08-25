@@ -2,7 +2,7 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
 
-const CLASP_JSON = "src/.clasp.json";
+const CLASP_JSON = ".clasp.json";
 
 // すでに .clasp.json がある場合はスキップ
 if (fs.existsSync(CLASP_JSON)) {
@@ -21,8 +21,8 @@ try {
 }
 
 // プロジェクト作成
-execSync("clasp create --type standalone --title 'catpow-gas' --rootDir ./src", {
-	stdio: "inherit",
-});
+execSync("clasp create --type standalone --title 'catpow-gas'", { stdio: "inherit" });
+execSync("clasp setting rootDir ./src", { stdio: "inherit" });
+execSync("mv appsscript.json src/", { stdio: "inherit" });
 
 console.log("Initialization complete!");
